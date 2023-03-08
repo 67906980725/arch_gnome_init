@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+#Icon=
+# 密码123456 要和aria2pro对应
+Exec=sh -c "xdg-open http://p3terx.gitee.io/ariang/#\!/settings/rpc/set/ws/localhost/6800/jsonrpc/$(echo -n 123456 | base64)"
+Name=AriaNg
+Name[zh_CN]=AriaNg
+Comment=AriaNg
+Comment[zh_CN]=AriaNg
+Categories=Net;Network,Tool
