@@ -23,9 +23,10 @@ sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
 
 # cmd
 #  cmd-base
-install base-devel bat fd exa neovim
-install paru asp 
+install base-devel bat fd exa neovim  paru asp 
 sh ./zsh.sh
+# net
+sh ./openvpn.sh
 
 
 # gui
@@ -49,6 +50,10 @@ sh ./sunlogin.sh
 # install intellij-idea-community-edition
 sh ./wechat.sh
 sh ./qq.sh
+
+
+# runtime
+sh ./docker.sh
 
 
 sh ./font.sh

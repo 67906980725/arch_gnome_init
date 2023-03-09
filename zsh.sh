@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source ./install.sh
+source ./cp_conf.sh
 
 install zsh oh-my-zsh-git fzf
 # cp /usr/share/oh-my-zsh/zshrc ~/.zshrc

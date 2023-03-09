@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source ./install.sh
+source ./cp_conf.sh
 
 install openvpn
 

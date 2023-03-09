@@ -2,4 +2,4 @@
 
 source ./install.sh
 
-install vimix-cursors tela-circle-icon-theme-git
+install vimix-cursors tela-circle-icon-theme-git deepin-icon-theme
