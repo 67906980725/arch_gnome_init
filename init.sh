@@ -4,7 +4,8 @@
 cd $(dirname "$0")
 source ./install.sh
 
-# sh ./ssh.sh
+
+sh ./ssh.sh
 
 
 # mirror
@@ -48,7 +49,8 @@ sh ./wps.sh
 install_ur wemeet-bin
 # install_ur com.qq.weixin.work.deepin-x11 # 企业微信
 sh ./sunlogin.sh
-# install intellij-idea-community-edition jdk8-openjdk 
+install intellij-idea-community-edition jdk8-openjdk 
+sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
 

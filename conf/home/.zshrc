@@ -116,6 +116,12 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+
+export BIN_PATH=${HOME}/.local/bin
+export PATH=$SCRIPT_PATH:$BIN_PATH:$_LD_LIBRARY_PATH:/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=${HOME}/.local/lib:$LD_LIBRARY_PATH
+
 alias sync="sudo pacman -Syyy"
 alias install="sudo pacman -S"
 alias update="sudo pacman -Syyu"
@@ -150,14 +156,14 @@ alias cat="bat --color always --plain";
 alias grep="grep --color=auto";
 alias v="nvim";
 
-cdls()
-{
-  cd "$1" && echo $(pwd) && exa --color=auto --icons -a
-}
-alias cd="cdls";
-zls()
-{
-  z "$1"
-  cdls
-}
-alias z="zls";
+# cdls()
+# {
+#   cd "$1" && echo $(pwd) && exa --color=auto --icons -a
+# }
+# alias cd="cdls";
+# zls()
+# {
+#   z "$1"
+#   cdls
+# }
+# alias z="zls";

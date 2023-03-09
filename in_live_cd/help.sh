@@ -2,7 +2,7 @@
 
 # iwctl to connect wifi
 # iwctl
-# station list # if no station, type `device list` remember the device adapter, and `rfkill list`, rfkill unblock <number of iwctl-device-adapter>
+# station list # if no station, type `rfkill unblock all` or rfkill unblock 3(your wlan device adaptor order)
 # station wlan0 scan
 # station wlan0 get-networks
 # station wlan0 connect <wifi-name>

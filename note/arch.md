@@ -12,6 +12,8 @@
 
 *在其他系统如 manjaro 上习惯 /boot 和 /boot/efi 分离, /boot/efi 做 esp 分区. 在 archinstall 中这样似乎行不通, 好在 esp 分区是可以有多个的，不需要和  windows 共用一个 esp 分区
 
+*碰到过在archinstall中用fat32格式化了准备好的esp分区后生成的配置文件中filesystem.format是fat32并且ESP为false, 安装完最后安装bootloader报格式不支持, 然后发现正确的配置应该是filesystem.format为vfat, ESP为true
+
 ``` plaintext
 reflector -c China --sort rate --save /etc/pacman.d/mirrorlist
 没有配置文件时:
