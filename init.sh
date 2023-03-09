@@ -19,6 +19,7 @@ sh ./blacklist.sh
 
 # sys
 sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
+sh ./swap.sh
 
 
 # cmd
