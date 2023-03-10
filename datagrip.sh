@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-app_path="$HOME/.local/app"
+source ./default_path.sh
+
 fname="DataGrip-2020.1.3"
 
-dpath="/$HOME/Downloads/${fname}.tar.gz"
+dpath="/$DOWN_PATH/${fname}.tar.gz"
 curl -o "$dpath" "https://download.jetbrains.com.cn/datagrip/datagrip-2020.1.3.tar.gz" -#
-tar -zxvf "$dpath" -C "$app_path"
+tar -zxvf "$dpath" -C "$APP_PATH"
 
-ipath="$app_path/${fname}"
+ipath="$APP_PATH/${fname}"
 sh ./app.sh desk "$ipath/bin/datagrip.sh" datagrip "$ipath/bin/datagrip.png"
 
 act_path="$ipath/act"

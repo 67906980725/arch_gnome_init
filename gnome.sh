@@ -2,6 +2,7 @@
 
 source ./install.sh
 source ./cp_conf.sh
+source ./default_path.sh
 
 
 # theme
@@ -47,11 +48,11 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 35
 
 
 # 快捷键
-# 窗口/应用切换不跨工作区
-gsettings set org.gnome.shell.app-switcher current-workspace-only true
 # alt+tab 切换窗口
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-#  注册表
+# 窗口/应用切换不跨工作区
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
+#  快捷键注册表
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 "[ \
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', \
@@ -91,9 +92,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 # ctrl+alt+shift+m 禁用/启用 麦克风
 cp_conf_home ".local/bin/microphone_mute"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Ctrl><Alt><Shift>m"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "$HOME/.local/bin/microphone_mute"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "$BIN_PATH/microphone_mute"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "microphon mute toggelt"
 # light/night toggelt
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Ctrl><Alt><Shift>d"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "$HOME/.local/bin/toggelt_dark_mode"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "$BIN_PATH/toggelt_dark_mode"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "toggelt dark mode"

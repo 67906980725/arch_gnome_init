@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source ./default_path.sh
 
 ## 把可执行文件软链接到~/.local/bin
 cmd()
@@ -7,7 +8,7 @@ cmd()
     if [ "$1" != "" ] && [ -x "$1" ]; then
         r_path=$(realpath "$1")
         chmod +x "$r_path"
-        ln -s "$r_path" "$HOME/.local/bin/$2"
+        ln -s "$r_path" "$BIN_PATH/$2"
     fi
 }
 
