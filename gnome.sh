@@ -7,6 +7,7 @@ source ./cp_conf.sh
 # theme
 # gsettings set org.gnome.desktop.interface gtk-theme theme-name
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'
+gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors'
 cp_conf_home ".local/bin/toggelt_dark_mode"
 # qt
 install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
