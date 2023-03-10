@@ -3,6 +3,9 @@
 source ./install.sh
 source ./cp_conf.sh
 
+# 从 x11 切换到 wayland
+
+
 install qt6-wayland wl-clipboard
 # install_ur wl-clipboard-x11
 
@@ -18,7 +21,7 @@ fi
 
 
 # 在文件 /usr/lib/udev/rules.d/61-gdm.rules 顶部添加 
-# GOTO = "gdm_prefer_wayland"
+# GOTO = "gdm_prefer_wayland" # 这句一定放要在第一行
 # LABEL="gdm_prefer_wayland"
 # RUN+="/usr/lib/gdm-runtime-config set daemon PreferredDisplayServer wayland"
 # GOTO="gdm_end"

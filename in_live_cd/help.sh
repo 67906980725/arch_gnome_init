@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-# iwctl to connect wifi
 # iwctl
-# station list # if no station, type `rfkill unblock all` or rfkill unblock 3(your wlan device adaptor order)
+# device list
+# station list # if no station, quit and type `rfkill unblock all` or rfkill unblock 3(your wlan device adaptor order)
 # station wlan0 scan
 # station wlan0 get-networks
 # station wlan0 connect <wifi-name>
 # quit
 
+
 reflector -c China --sort rate --save /etc/pacman.d/mirrorlist
+
 
 # if not have configuration files yet
 #archinstall
+
 # or using configuration files 
 mkdir /root/storage
 mount /dev/<storage_part> /root/storage # change to your configration files part

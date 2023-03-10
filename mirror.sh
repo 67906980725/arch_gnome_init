@@ -4,16 +4,14 @@ source ./install.sh
 source ./cp_conf.sh
 
 install reflector
-install wqy-microhei
 
 cp_conf_root "/etc/xdg/reflector/reflector.conf"
-
-sudo reflector --verbose -c China --latest 12 --sort rate --threads 16 --save /etc/pacman.d/mirrorlist 
-
 cp_conf_root "/etc/pacman.conf"
 
+sudo reflector --verbose -c China --latest 12 --sort rate --threads 16 --save /etc/pacman.d/mirrorlist 
 sudo pacman -Syy
-install archlinuxcn-keyring
+install archlinuxcn-keyring 
+install wqy-microhei
 
 
 fix_keyring()

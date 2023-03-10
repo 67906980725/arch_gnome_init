@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# 快捷openvpn
+# 快捷的 openvpn, 如: vpn test
 _vpn()
 {
     conf="$2"

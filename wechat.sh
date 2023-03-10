@@ -20,4 +20,5 @@ install_ur deepin-wine-wechat
 
 /opt/apps/com.qq.weixin.deepin/files/run.sh winecfg
 
+# 快捷打开winecfg或其他fix功能
 cp_conf_home ".local/bin/rewechat"

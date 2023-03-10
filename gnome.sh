@@ -4,7 +4,16 @@ source ./install.sh
 source ./cp_conf.sh
 
 
-install nemo chrome-gnome-shell gnome-shell-extension-appindicator  gnome-shell-extension-net-speed
+# nemo
+install nemo nemo-fileroller nemo-preview nemo-seahorse
+# install_ur nemo-compare
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search # 默认管理器
+gsettings set org.nemo.desktop show-desktop-icons true # 显示desktop文件图标
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kgx # 默认终端
+
+
+# plugin
+install chrome-gnome-shell gnome-shell-extension-appindicator  gnome-shell-extension-net-speed
 install_ur gnome-shell-extension-clipboard-indicator
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
 # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/

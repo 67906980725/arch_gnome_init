@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-## 把app的入口软链接到$BIN_PATH
+## 把可执行文件软链接到~/.local/bin
 cmd()
 {
     if [ "$1" != "" ] && [ -x "$1" ]; then
@@ -11,6 +11,7 @@ cmd()
     fi
 }
 
+## 为绿色软件创建启动图标
 desk()
 {
   # $1: bin_name $2:app_name $3: icon_name

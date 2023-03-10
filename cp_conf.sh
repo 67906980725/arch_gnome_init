@@ -19,9 +19,9 @@ cp_conf_root()
     file="$1"
     conf_file="./conf$file"
     bak_conf_root "$file"
-    echo "overwrite root file ${file} from ${conf_file}"
+    echo "overwrite system file ${file} by ${conf_file}"
     # cat "${conf_file}" 2>&1 | sudo tee $file 
-    sudo sh ./overwrite.sh "${conf_file}" "$file"
+    sudo sh ./overwrite.sh "$file" "${conf_file}"
 }
 
 append_conf_root()

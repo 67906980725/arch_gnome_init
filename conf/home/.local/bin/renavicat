@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+# 嘘
 rm -r ~/.config/dconf ~/.config/navicat

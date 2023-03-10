@@ -2,4 +2,5 @@
 
 source ./install.sh
 
-install vimix-cursors tela-circle-icon-theme-git deepin-icon-theme
+# 通常的鼠标指针和图标主题
+install vimix-cursors tela-circle-icon-theme-git

@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-cat "$1" > "$2"
+# sudo overwrite.sh target.txt source.txt
+cat "$2" > "$1"
