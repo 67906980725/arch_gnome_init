@@ -42,7 +42,6 @@ sh ./recorder.sh
 sh ./notify.sh
 sh ./theme.sh
 sh ./gnome.sh
-# 先装theme后装fcitx5能使fcitx5使用theme皮肤而不是自带的皮肤？
 sh ./fcitx5.sh
 
 sh ./wps.sh
@@ -57,6 +56,7 @@ sh ./qq.sh
 
 # runtime
 sh ./docker.sh
+install_ur appimagelauncher
 
 
 sh ./font.sh

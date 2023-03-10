@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mode="$(gsettings get org.gnome.desktop.interface color-scheme)"
+
+if [ "$mode" = "'prefer-dark'" ]; then
+    echo "light!"
+    gsettings set org.gnome.desktop.interface color-scheme "default"
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+else
+    echo "dark"
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+fi
+

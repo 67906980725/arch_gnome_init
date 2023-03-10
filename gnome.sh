@@ -4,6 +4,14 @@ source ./install.sh
 source ./cp_conf.sh
 
 
+# theme
+# gsettings set org.gnome.desktop.interface gtk-theme theme-name
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'
+cp_conf_home ".local/bin/toggelt_dark_mode"
+# qt
+install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
+
+
 # nemo
 install nemo nemo-fileroller nemo-preview nemo-seahorse
 # install_ur nemo-compare
@@ -18,6 +26,23 @@ install_ur gnome-shell-extension-clipboard-indicator
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
 # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
 # xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
+# gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
+gnome-extensions enable $(gnome-extensions list | grep -m 1 appindicatorsupport)
+gnome-extensions enable $(gnome-extensions list | grep -m 1 clipboard)
+gnome-extensions enable $(gnome-extensions list | grep -m 1 netspeed)
+
+
+# 触摸板 速度与轻触以点击
+gsettings set org.gnome.desktop.peripherals.touchpad speed "0.66972477064220182"
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
+
+# 护眼
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
+gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20.0
+gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 20.0
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3500
 
 
 # 快捷键
@@ -35,6 +60,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', \
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', \
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', \
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', \
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/' \
 ]"
 # win+c 计算器
@@ -66,3 +92,7 @@ cp_conf_home ".local/bin/microphone_mute"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Ctrl><Alt><Shift>m"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "$HOME/.local/bin/microphone_mute"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "microphon mute toggelt"
+# light/night toggelt
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Ctrl><Alt><Shift>d"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "$HOME/.local/bin/toggelt_dark_mode"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "toggelt dark mode"

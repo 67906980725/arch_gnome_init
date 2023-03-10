@@ -6,7 +6,7 @@ source ./cp_conf.sh
 # 从 x11 切换到 wayland
 
 
-install qt6-wayland wl-clipboard
+install qt6-wayland wl-clipboard glfw-wayland xorg-xlsclients
 # install_ur wl-clipboard-x11
 
 
