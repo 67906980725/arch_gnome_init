@@ -2,13 +2,25 @@
 
 source ./install.sh
 source ./cp_conf.sh
+source ./default_path.sh
+
+
+if ! $(is_wayland) ; then
+    cp_conf_home ".bashrc"
+    return 0
+fi
+
+
 
 # 从 x11 切换到 wayland
 
-
 install qt6-wayland wl-clipboard glfw-wayland xorg-xlsclients
+# QT_QPA_PLATFORM=wayland
+set_env "QT_QPA_PLATFORM" "wayland"
 # install_ur wl-clipboard-x11
-
+# firefox
+# MOZ_ENABLE_WAYLAND=1
+set_env "MOZ_ENABLE_WAYLAND" 1
 
 # cp_conf_root "/etc/gdm/custom.conf" # 会被自动还原
 # 注掉原有的WaylandEnable行 在下边添加一行WaylandEnable=true
@@ -35,5 +47,3 @@ GOTO="gdm_end"
 if [ ! -e "./conf_bak$rule_file" ]; then
     sudo sed -i '1i\GOTO = "gdm_prefer_wayland"' "/usr/lib/udev/rules.d/61-gdm.rules"
 fi
-
-cp_conf_home ".config/environment.d/envvars.conf"

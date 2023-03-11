@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+# 前提条件: 常用用户账户有root权限, 当前用户是常用用户而非root
 
 cd $(dirname "$0")
 source ./install.sh
+source ./cp_conf.sh
+source ./default_path.sh
 
 
 sh ./ssh.sh
@@ -14,21 +17,27 @@ sh ./mirror.sh
 
 # hardware
 sh ./bluetooth.sh
-install brightnessctl # brightnessctl set 2.5%+    brightnessctl set 2.5%-
 sh ./blacklist.sh
-
-
-# sys
-sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
-sh ./swap.sh
 
 
 # cmd
 #  cmd-base
 install base-devel bat fd exa neovim  paru asp 
+sh ./initool.sh build
+#  EDITOR="nvim"
+set_env "EDITOR" "nvim"
 sh ./zsh.sh
 # net
 sh ./openvpn.sh
+
+
+# sys
+# sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
+# LANG="zh-CN.UTF-8" 
+# LC_ALL="en_US.UTF-8"
+set_env "LANG" "zh-CN.UTF-8"
+set_env "LC_ALL" "en_US.UTF-8"
+sh ./swap.sh
 
 
 # gui

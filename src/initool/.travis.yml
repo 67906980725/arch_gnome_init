@@ -1,0 +1,6 @@
+language: generic
+addons:
+  apt:
+    packages:
+      - mlton
+script: make test
