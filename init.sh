@@ -61,7 +61,7 @@ install intellij-idea-community-edition jdk8-openjdk
 sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
-sh ./statr_group
+sh ./start_group.sh
 
 
 # runtime
