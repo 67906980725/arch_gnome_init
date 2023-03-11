@@ -15,18 +15,24 @@ cmd()
 ## 为绿色软件创建启动图标
 desk()
 {
-  # $1: bin_name $2:app_name $3: icon_name
-  if [ "$1" != "" ]; then
-    r_path=$(realpath "$1")
-    chmod +x "$r_path"
-    icon="$3"
+  # $1: bin_name $2:app_name $3: icon_name $4: param
+  if [ "$1" != "" ] || [ "$4" != "" ] ; then
+    echo "创建启动图标:${2}, 如有报错 [Operation not permitted] 可以忽略"
+    r_path=""
+    if [ "$1" != "" ]; then
+      r_path=$(realpath "$1")
+      chmod +x "$r_path"
+    fi
+
+# Exec=sh -c \"exec ${r_path} $4\"
+
         echo "
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
 Terminal=false
-Icon=\"${icon}\"
-Exec=sh -c \"exec ${r_path}\"
+Icon=\"$3\"
+Exec=sh -c \"${r_path} $4\"
 Name=$2
 Name[zh_CN]=$2
 Comment=$2
@@ -34,11 +40,10 @@ Comment[zh_CN]=$2
 Categories=Tool
 " > ~/.local/share/applications/${2}.desktop
   fi
-  cmd $1 $2
 }
 
 
 case $1 in
-    desk) desk "$2" "$3" "$4";;
+    desk) desk "$2" "$3" "$4" "$5";;
     *) cmd "$1" "$2";;
 esac

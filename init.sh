@@ -46,7 +46,7 @@ install xclip
 sh ./wayland.sh
 #  gui-base
 install firefox mpv
-sh ./vscode.sh
+sh ./vscode.sh with_note
 sh ./recorder.sh
 sh ./notify.sh
 sh ./theme.sh
@@ -61,6 +61,7 @@ install intellij-idea-community-edition jdk8-openjdk
 sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
+sh ./statr_group
 
 
 # runtime
