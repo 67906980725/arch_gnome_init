@@ -6,7 +6,8 @@ source ./install.sh
 source ./cp_conf.sh
 source ./default_path.sh
 
-sh ./ssh.sh
+# 使备份恢复的ssh key可用
+sh ./conf/home/.ssh/key_reg.sh
 # mirror
 sh ./mirror.sh
 
@@ -21,6 +22,7 @@ sh ./initool.sh build
 set_env "EDITOR" "nvim" #  EDITOR="nvim"
 sh ./zsh.sh
 #  net
+sh ./ssh.sh
 sh ./openvpn.sh
 
 # sys

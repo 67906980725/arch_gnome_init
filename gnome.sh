@@ -5,17 +5,6 @@ source ./cp_conf.sh
 source ./default_path.sh
 
 
-# theme
-# gsettings set org.gnome.desktop.interface gtk-theme theme-name
-gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'
-gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors'
-cp_conf_home ".local/bin/toggelt_dark_mode"
-# qt
-install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
-# QT_QPA_PLATFORMTHEME=qgnomeplatform
-set_env "QT_QPA_PLATFORMTHEME" "qgnomeplatform"
-
-
 # nemo
 install nemo nemo-fileroller nemo-preview nemo-seahorse
 # install_ur nemo-compare
@@ -31,9 +20,24 @@ xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
 # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
 # xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
 # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
+gnome-extensions enable $(gnome-extensions list | grep -m 1 user-theme)
 gnome-extensions enable $(gnome-extensions list | grep -m 1 appindicatorsupport)
 gnome-extensions enable $(gnome-extensions list | grep -m 1 clipboard)
 gnome-extensions enable $(gnome-extensions list | grep -m 1 netspeed)
+
+
+# theme
+install vimix-cursors tela-circle-icon-theme-git gnome-themes-extra
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle' # icon
+gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors' # cursor
+#gsettings set org.gnome.desktop.interface cursor-size 24 # cursor size
+cp_conf_home ".local/bin/toggelt_dark_mode" # change dark mode
+#paru -S orchis-theme # 默认github拉不动, 需要手动执行后去加速站下包
+#gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
+#  qt
+install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
+#  QT_QPA_PLATFORMTHEME=qgnomeplatform
+set_env "QT_QPA_PLATFORMTHEME" "qgnomeplatform"
 
 
 # 触摸板 速度与轻触以点击
