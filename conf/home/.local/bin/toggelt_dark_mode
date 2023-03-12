@@ -1,67 +1,65 @@
 #!/usr/bin/env bash
 
+
+prefer_dark_name="prefer-dark"
+prefer_light_name="default"
+gnome_shell_dark_name="Orchis-Dark-Compact"
+gnome_shell_light_name="Orchis-Light-Compact"
+gtk2_dark_name="Adwaita-dark"
+gtk2_light_name="Adwaita"
+
+code_dark_name="Default\ Dark+"
+code_light_name="Default\ Light+"
+fcitx5_dark_name="Alpha-black-2.0"
+fcitx5_light_name="珍珠白"
+
+
 full_dark()
 {
-    # dark_compact
     dark
     code_Dark
     fcitx5_Dark
 }
 full_light()
 {
-    # light_compact
     light
-    fcitx5_light
     code_light
+    fcitx5_light
 }
 
 dark()
 {
-    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-    gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Dark'
-}
-dark_compact()
-{
-    code_Dark
-    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Dark-Compact"
-    gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Dark-Compact'
+    gsettings set org.gnome.desktop.interface color-scheme "$prefer_dark_name"
+    gsettings set org.gnome.shell.extensions.user-theme name "$gnome_shell_dark_name"
+    gsettings set org.gnome.desktop.interface gtk-theme "$gtk2_dark_name"
 }
 light()
 {
-    gsettings set org.gnome.desktop.interface color-scheme "default"
-    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-    gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
-}
-light_compact()
-{
-    code_light
-    gsettings set org.gnome.desktop.interface color-scheme "default"
-    gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Light-Compact"
-    gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Light-Compact'
-}
-code_light()
-{
-    sed -i '/workbench.colorTheme/s/Dark/Light/' "$HOME/.config/Code - OSS/User/settings.json"
+    gsettings set org.gnome.desktop.interface color-scheme "$prefer_light_name"
+    gsettings set org.gnome.shell.extensions.user-theme name "$gnome_shell_light_name"
+    gsettings set org.gnome.desktop.interface gtk-theme "$gtk2_light_name"
 }
 code_Dark()
 {
-    sed -i '/workbench.colorTheme/s/Light/Dark/' "$HOME/.config/Code - OSS/User/settings.json"
+    sed -i "/workbench.colorTheme/s/$code_light_name/$code_dark_name/" "$HOME/.config/Code - OSS/User/settings.json"
 }
-fcitx5_light()
+code_light()
 {
-    sed -i '/Theme=/s/Alpha-black-2.0/珍珠白/' "$HOME/.config/fcitx5/conf/classicui.conf"
+    sed -i "/workbench.colorTheme/s/$code_dark_name/$code_light_name/" "$HOME/.config/Code - OSS/User/settings.json"
 }
 fcitx5_Dark()
 {
-    sed -i '/Theme=/s/珍珠白/Alpha-black-2.0/' "$HOME/.config/fcitx5/conf/classicui.conf"
+    sed -i "/Theme=/s/$fcitx5_light_name/$fcitx5_dark_name/" "$HOME/.config/fcitx5/conf/classicui.conf"
+}
+fcitx5_light()
+{
+    sed -i "/Theme=/s/$fcitx5_dark_name/$fcitx5_light_name/" "$HOME/.config/fcitx5/conf/classicui.conf"
 }
 
 toggelt()
 {
     mode="$(gsettings get org.gnome.desktop.interface color-scheme)"
-    if [ "$mode" = "'prefer-dark'" ]; then
+    if [ "$mode" = "'$prefer_dark_name'" ]; then
         full_light
     else
         full_dark
