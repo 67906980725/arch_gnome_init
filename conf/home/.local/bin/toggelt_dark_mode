@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+full_dark()
+{
+    # dark_compact
+    dark
+    code_Dark
+    fcitx5_Dark
+}
+full_light()
+{
+    # light_compact
+    light
+    fcitx5_light
+    code_light
+}
+
 dark()
 {
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
@@ -8,6 +23,7 @@ dark()
 }
 dark_compact()
 {
+    code_Dark
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
     gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Dark-Compact"
     gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Dark-Compact'
@@ -20,28 +36,42 @@ light()
 }
 light_compact()
 {
+    code_light
     gsettings set org.gnome.desktop.interface color-scheme "default"
     gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Light-Compact"
     gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Light-Compact'
 }
+code_light()
+{
+    sed -i '/workbench.colorTheme/s/Dark/Light/' "$HOME/.config/Code - OSS/User/settings.json"
+}
+code_Dark()
+{
+    sed -i '/workbench.colorTheme/s/Light/Dark/' "$HOME/.config/Code - OSS/User/settings.json"
+}
+fcitx5_light()
+{
+    sed -i '/Theme=/s/Alpha-black-2.0/珍珠白/' "$HOME/.config/fcitx5/conf/classicui.conf"
+}
+fcitx5_Dark()
+{
+    sed -i '/Theme=/s/珍珠白/Alpha-black-2.0/' "$HOME/.config/fcitx5/conf/classicui.conf"
+}
+
 toggelt()
 {
     mode="$(gsettings get org.gnome.desktop.interface color-scheme)"
     if [ "$mode" = "'prefer-dark'" ]; then
-        # light
-        light_compact
+        full_light
     else
-        # dark
-        dark_compact
+        full_dark
     fi
 }
 
 
 case $1 in
-    dark) dark;;
-    dark_compact) dark_compact;;
-    light) light;;
-    light_compact) light_compact;;
+    dark) full_dark;;
+    light) full_light;;
     *) toggelt ;;
 esac
 

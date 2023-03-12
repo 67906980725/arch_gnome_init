@@ -4,7 +4,8 @@ source ./install.sh
 source ./default_path.sh
 
 install fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-chinese-addons fcitx5-rime 
-cp -r ./conf/home/.config/fcitx5 $HOME/.config/
+cp -frp ./conf/home/.config/fcitx5 $HOME/.config/
+cp -frp ./conf/home/.local/share/fcitx5/themes $HOME/.local/share/fcitx5/
 
 # env
 # GTK_IM_MODULE="fcitx"

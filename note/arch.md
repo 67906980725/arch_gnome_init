@@ -577,7 +577,6 @@ sudo usermod -a -G vboxusers $USER
 #  u盘
 sudo groupadd usbfs
 sudo usermod -a -G usbfs $USER
-sudo usermod -a -G vboxusers $USER
 #sudo reboot now
 
 # navicat 无限试用
