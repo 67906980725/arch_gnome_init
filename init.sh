@@ -35,7 +35,7 @@ sh ./swap.sh
 install xclip
 sh ./wayland.sh
 #  gui-base
-install firefox mpv
+install firefox mpv # https://greasyfork.org/en/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD
 sh ./vscode.sh
 sh ./recorder.sh
 sh ./notify.sh
@@ -56,6 +56,7 @@ sh ./desktop_file.sh
 # runtime
 sh ./docker.sh
 install_ur appimagelauncher
+sh ./qemu.sh
 
 sh ./font.sh
 
