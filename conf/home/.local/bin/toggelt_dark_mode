@@ -15,13 +15,19 @@ fcitx5_light_name="珍珠白"
 
 
 full_dark()
-{
+{   
+    if [ "$1" != "" ] && [ "$(gsettings set org.gnome.desktop.interface color-scheme)" = "$prefer_dark_name" ]; then
+        return 0
+    fi
     dark
     code_Dark
     fcitx5_Dark
 }
 full_light()
 {
+    if [ "$1" != "" ] && [ "$(gsettings set org.gnome.desktop.interface color-scheme)" = "$prefer_light_name" ]; then
+        return 0
+    fi
     light
     code_light
     fcitx5_light
@@ -68,13 +74,7 @@ toggelt()
 
 
 case $1 in
-    dark) full_dark;;
-    light) full_light;;
+    dark) full_dark $2;;
+    light) full_light $2;;
     *) toggelt ;;
 esac
-
-
-
-
-
-
