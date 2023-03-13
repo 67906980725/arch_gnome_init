@@ -52,6 +52,7 @@ sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
 sh ./desktop_file.sh
+sh ./cron.sh
 
 # runtime
 sh ./docker.sh
