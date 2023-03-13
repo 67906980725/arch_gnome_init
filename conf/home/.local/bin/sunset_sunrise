@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ./install.sh
-
 dir="$HOME/.local/share/sunset_sunrise"
 month_file="$dir/month.html"
 day_file="$dir/day"
@@ -33,7 +31,7 @@ req_line()
     echo "$line"
 }
 
-# 5分钟执行一次
+# 5分钟执行一次 */5 * * * *
 light_dark_by_sunset_sunrise()
 {
     day_line="$(cat $day_file)"
@@ -70,9 +68,9 @@ light_dark_by_sunset_sunrise()
     sunset_ts=$(time_to_ts "$sunset")
     sunrise_ts=$(time_to_ts "$sunrise")
     if [ $now_ts -ge $sunset_ts ]  &&  [ $now_ts -lt $sunrise_ts ] ; then
-        toggelt_dark_mode light
+        $HOME/.local/bin/toggelt_dark_mode light dis_overwrite
     else
-        toggelt_dark_mode dark
+        $HOME/.local/bin/toggelt_dark_mode dark dis_overwrite
     fi
 }
 
