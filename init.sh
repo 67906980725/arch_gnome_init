@@ -48,7 +48,7 @@ install_ur wemeet-bin
 # install_ur com.qq.weixin.work.deepin-x11 # 企业微信
 sh ./sunlogin.sh
 install intellij-idea-community-edition jdk8-openjdk 
-sh ./datagrip.sh
+mkdir -p "$HOME/.local/app" && sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
 sh ./desktop_file.sh

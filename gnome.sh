@@ -32,7 +32,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle' # icon
 gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors' # cursor
 #gsettings set org.gnome.desktop.interface cursor-size 24 # cursor size
 cp_conf_home ".local/bin/toggelt_dark_mode" # change dark mode cmd eg: toggelt_dark_mode light / toggelt_dark_mode dark
-install_ur yin-yang # auto change dark mode 
 #paru -S orchis-theme # 默认github拉不动, 需要手动执行后去加速站下包
 #gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
 #  qt

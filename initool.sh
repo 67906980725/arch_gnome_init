@@ -37,7 +37,7 @@ set_domain()
     initool s "$file" "$domain" "$key" "$value" > "$file"
 }
 
-set()
+_set_()
 {
     file="$1"
     key="$2"
@@ -49,8 +49,8 @@ set()
 case $1 in
     build) build ;;
     set_domain) set_domain "$2" "$3" "$4" "$5" ;;
-    set) set "$2" "$3" "$4" ;;
-    *) re ;;
+    set) _set_ "$2" "$3" "$4" ;;
+    *)  ;;
 esac
 
 # sudo ./initool.sh set "/etc/sudoers" "$USER ALL" "(ALL:ALL) ALL" 文件格式验证不通过 

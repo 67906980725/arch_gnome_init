@@ -23,5 +23,5 @@ fi
 set_env()
 {
     source ./initool.sh
-    set "$ENV_FILE" "$1" "$2"
+    _set_ "$ENV_FILE" "$1" "$2"
 }
