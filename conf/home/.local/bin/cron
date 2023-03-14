@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
+sunset_sunrise()
+{
+    $HOME/.local/bin/sunset_sunrise
+}
+
 cron() {
+    sunset_sunrise
+    
     [ $1 ] && sleep $1
     let i=10
     while true; do
-        [ $((i % 300)) -eq 0 ] && $HOME/.local/bin/sunset_sunrise # 每300秒
+        [ $((i % 300)) -eq 0 ] && sunset_sunrise # 每300秒
         sleep 10; let i+=10
     done
 }

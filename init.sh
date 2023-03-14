@@ -17,9 +17,10 @@ sh ./blacklist.sh
 
 # cmd
 #  cmd-base
-install base-devel bat fd exa neovim  paru asp 
+install base-devel bat fd exa neovim  paru asp
+# EDITOR="nvim"
+cp_conf_home ".config/environment.d/cmd.conf"
 sh ./initool.sh build
-set_env "EDITOR" "nvim" #  EDITOR="nvim"
 sh ./zsh.sh
 #  net
 sh ./ssh.sh
@@ -27,7 +28,6 @@ sh ./openvpn.sh
 
 # sys
 # sudo sed -i "/root ALL/a $USER\ ALL=(ALL:ALL)\ ALL" /etc/sudoers
-sh ./i18n.sh
 sh ./swap.sh
 
 # gui
@@ -48,7 +48,7 @@ install_ur wemeet-bin
 # install_ur com.qq.weixin.work.deepin-x11 # 企业微信
 sh ./sunlogin.sh
 install intellij-idea-community-edition jdk8-openjdk 
-mkdir -p "$HOME/.local/app" && sh ./datagrip.sh
+sh ./datagrip.sh
 sh ./wechat.sh
 sh ./qq.sh
 sh ./desktop_file.sh

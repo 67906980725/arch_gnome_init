@@ -11,16 +11,16 @@ if ! $(is_wayland) ; then
 fi
 
 
-
 # 从 x11 切换到 wayland
+
 
 install qt6-wayland wl-clipboard glfw-wayland xorg-xlsclients
 # QT_QPA_PLATFORM=wayland
-set_env "QT_QPA_PLATFORM" "wayland"
-# install_ur wl-clipboard-x11
 # firefox
 # MOZ_ENABLE_WAYLAND=1
-set_env "MOZ_ENABLE_WAYLAND" 1
+cp_conf_home ".config/environment.d/wayland.conf"
+# install_ur wl-clipboard-x11
+
 
 # cp_conf_root "/etc/gdm/custom.conf" # 会被自动还原
 # 注掉原有的WaylandEnable行 在下边添加一行WaylandEnable=true

@@ -37,7 +37,7 @@ cp_conf_home ".local/bin/toggelt_dark_mode" # change dark mode cmd eg: toggelt_d
 #  qt
 install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
 #  QT_QPA_PLATFORMTHEME=qgnomeplatform
-set_env "QT_QPA_PLATFORMTHEME" "qgnomeplatform"
+cp_conf_home ".config/environment.d/gnome.conf"
 
 
 # 触摸板 速度与轻触以点击

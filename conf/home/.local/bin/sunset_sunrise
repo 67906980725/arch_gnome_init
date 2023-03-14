@@ -31,7 +31,6 @@ req_line()
     echo "$line"
 }
 
-# 5分钟执行一次 */5 * * * *
 light_dark_by_sunset_sunrise()
 {
     day_line="$(cat $day_file)"

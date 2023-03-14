@@ -6,6 +6,7 @@ fname="DataGrip-2020.1.3"
 
 dpath="/$DOWN_PATH/${fname}.tar.gz"
 curl -o "$dpath" "https://download.jetbrains.com.cn/datagrip/datagrip-2020.1.3.tar.gz" -#
+mkdir -p "$HOME/.local/app"
 tar -zxvf "$dpath" -C "$APP_PATH/"
 
 ipath="$APP_PATH/${fname}"
