@@ -9,6 +9,7 @@ cp_conf_root "/etc/xdg/reflector/reflector.conf"
 cp_conf_root "/etc/pacman.conf"
 
 sudo reflector --verbose -c China --latest 12 --sort rate --threads 16 --save /etc/pacman.d/mirrorlist 
+sudo systemctl enable --now reflector
 sudo pacman -Syy
 install archlinuxcn-keyring 
 install wqy-microhei
