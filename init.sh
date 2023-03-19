@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # 前提条件: 常用用户账户有root权限, 当前用户是常用用户而非root
 
+# mkdir -p $HOME/.local/project/i/sys
+# cd $HOME/.local/project/i/sys
+# git@gitee.com:g8307640632/arch_gnome_init.git
+
 cd $(dirname "$0")
 source ./install.sh
 source ./cp_conf.sh
