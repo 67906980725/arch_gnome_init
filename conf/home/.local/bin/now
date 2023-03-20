@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+now()
+{
+    str="$(date '+%Y-%m-%d %H:%M:%S')"
+    echo $str
+    wl-copy $str
+}
+
+now

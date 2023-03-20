@@ -21,5 +21,6 @@ cp_conf_home ".p10k.zsh"
 
 chsh -s "$(which zsh)"
 
+cp_conf_home ".local/bin/now"
 cp_conf_home ".local/bin/k"
 cp_conf_home ".local/bin/len"
