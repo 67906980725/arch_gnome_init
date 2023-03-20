@@ -7,6 +7,7 @@ source ./cp_conf.sh
 # Archlinux 默认没有开启Multilib仓库, 
 # 如果是用archinstall安装的系统应该提前选好Optional repositories: ['multilib']
 # 如果没有提前选择也不要紧，前边的mirror脚本覆盖的/etc/pacman.conf里也是开启了的
+install base-devel
 install_ur deepin-wine-wechat
 
 # 提示从git下载文件失败不要怕， 找个github文件加速站
