@@ -16,23 +16,24 @@ fcitx5_light_name="珍珠白"
 
 full_dark()
 {   
-    if [ "$1" != "" ] && [ "$(gsettings set org.gnome.desktop.interface color-scheme)" = "$prefer_dark_name" ]; then
+    # 如果方法调用时有传参并且当前color-scheme是$prefer_dark_name时就不再设置主题了
+    if [ "$1" != "" ] && [ "$(gsettings get org.gnome.desktop.interface color-scheme)" = "'$prefer_dark_name'" ]; then
         return 0
     fi
     dark
     code_Dark
     fcitx5_Dark
-    restart_qq
+    restarts
 }
 full_light()
 {
-    if [ "$1" != "" ] && [ "$(gsettings set org.gnome.desktop.interface color-scheme)" = "$prefer_light_name" ]; then
+    if [ "$1" != "" ] && [ "$(gsettings get org.gnome.desktop.interface color-scheme)" = "'$prefer_light_name'" ]; then
         return 0
     fi
     light
     code_light
     fcitx5_light
-    restart_qq
+    restarts
 }
 
 dark()
@@ -63,8 +64,10 @@ fcitx5_light()
 {
     sed -i "/Theme=/s/$fcitx5_dark_name/$fcitx5_light_name/" "$HOME/.config/fcitx5/conf/classicui.conf"
 }
-restart_qq()
+restarts()
 {
+    notify-send "即将重启: QQ"
+    sleep 10
     $HOME/.local/bin/k qq
     gtk-launch qq
 }
