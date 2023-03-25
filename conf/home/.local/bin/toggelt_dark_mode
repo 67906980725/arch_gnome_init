@@ -23,7 +23,7 @@ full_dark()
     dark
     code_Dark
     fcitx5_Dark
-    restarts
+    restarts &
 }
 full_light()
 {
@@ -33,7 +33,7 @@ full_light()
     light
     code_light
     fcitx5_light
-    restarts
+    restarts &
 }
 
 dark()
