@@ -53,12 +53,9 @@ install intellij-idea-community-edition jdk8-openjdk
 sh ./datagrip.sh
 sh ./desktop_file.sh
 
+sh ./font.sh
+
 # runtime
 sh ./docker.sh
 install_ur appimagelauncher
 sh ./qemu.sh
-
-sh ./font.sh
-
-# 以上执行完重启后执行
-# sh ./after_reboot.sh
