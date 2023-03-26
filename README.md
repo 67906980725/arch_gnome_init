@@ -1,5 +1,7 @@
 # README
 
+arch gnome 国内初始化脚本
+
 *需要当前用户是常用用户而非 root, 并且常用用户账户有 root 权限
 
 *提前恢复 .ssh 目录
