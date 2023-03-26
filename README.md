@@ -22,4 +22,5 @@ cd arch_gnome_init
 
 ``` shell
 cd $HOME/.local/project/i/sys/arch_gnome_init
-sh ./after_reboot.sh```
+sh ./after_reboot.sh
+```
