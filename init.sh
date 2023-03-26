@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
-# 前提条件: 常用用户账户有root权限, 当前用户是常用用户而非root
-
-# mkdir -p $HOME/.local/project/i/sys
-# cd $HOME/.local/project/i/sys
-# git@gitee.com:g8307640632/arch_gnome_init.git
+# 需要当前用户是常用用户而非root, 并且常用用户账户有root权限
 
 cd $(dirname "$0")
 source ./install.sh
 source ./cp_conf.sh
 source ./default_path.sh
 
-# 使备份恢复的ssh key可用
-sh ./conf/home/.ssh/key_reg.sh
 # mirror
 sh ./mirror.sh
 
