@@ -126,6 +126,9 @@ export BIN_PATH=${HOME}/.local/bin
 export PATH=$SCRIPT_PATH:$BIN_PATH:$_LD_LIBRARY_PATH:/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=${HOME}/.local/lib:$LD_LIBRARY_PATH
 
+export MV_DIR="$HOME/asset/tel/recreation/mv" # 音乐目录
+
+
 alias sync="sudo pacman -Syyy"
 alias install="sudo pacman -S"
 alias update="sudo pacman -Syyu"

@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# 根据时间切换深色/浅色模式 由用户级定时任务调用
+
 dir="$HOME/.local/share/sunset_sunrise"
 month_file="$dir/month.html"
 day_file="$dir/day"
 
+# 第一次用需要执行一次init方法
 init()
 {
     mkdir "$dir"

@@ -39,26 +39,25 @@ sh ./swap.sh
 install xclip
 sh ./wayland.sh
 #  gui-base
-install firefox mpv # https://greasyfork.org/en/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD
-xdg-open https://github.com/gorhill/uBlock/releases
-# xdg-open https://github.com/gorhill/uBlock-for-firefox-legacy/releases
+sh ./gnome.sh
+sh ./theme.sh
+sh ./fcitx5.sh
+sh ./firefox.sh
+sh ./mpv.sh
 sh ./vscode.sh
 sh ./recorder.sh
 sh ./notify.sh
-sh ./theme.sh
-sh ./gnome.sh
-sh ./fcitx5.sh
+sh ./cron.sh
 #  gui-normal
+sh ./qq.sh
+sh ./wechat.sh
 sh ./wps.sh
-install_ur wemeet-bin
-# install_ur com.qq.weixin.work.deepin-x11 # 企业微信
 sh ./sunlogin.sh
+#install_ur com.qq.weixin.work.deepin-x11
+install_ur wemeet-bin
 install intellij-idea-community-edition jdk8-openjdk 
 sh ./datagrip.sh
-sh ./wechat.sh
-sh ./qq.sh
 sh ./desktop_file.sh
-sh ./cron.sh
 
 # runtime
 sh ./docker.sh

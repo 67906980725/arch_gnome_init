@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# 深色/浅色模式切换
 
 prefer_dark_name="prefer-dark"
 prefer_light_name="default"
@@ -14,6 +15,7 @@ fcitx5_dark_name="Alpha-black-2.0"
 fcitx5_light_name="珍珠白"
 
 
+# 切换到深色模式
 full_dark()
 {   
     # 如果方法调用时有传参并且当前color-scheme是$prefer_dark_name时就不再设置主题了
@@ -25,6 +27,7 @@ full_dark()
     fcitx5_Dark
     restarts &
 }
+# 切换到浅色模式
 full_light()
 {
     if [ "$1" != "" ] && [ "$(gsettings get org.gnome.desktop.interface color-scheme)" = "'$prefer_light_name'" ]; then
@@ -34,6 +37,16 @@ full_light()
     code_light
     fcitx5_light
     restarts &
+}
+# 切换到另一个模式
+toggelt()
+{
+    mode="$(gsettings get org.gnome.desktop.interface color-scheme)"
+    if [ "$mode" = "'$prefer_dark_name'" ]; then
+        full_light
+    else
+        full_dark
+    fi
 }
 
 dark()
@@ -70,16 +83,6 @@ restarts()
     sleep 10
     $HOME/.local/bin/k qq
     gtk-launch qq
-}
-
-toggelt()
-{
-    mode="$(gsettings get org.gnome.desktop.interface color-scheme)"
-    if [ "$mode" = "'$prefer_dark_name'" ]; then
-        full_light
-    else
-        full_dark
-    fi
 }
 
 
