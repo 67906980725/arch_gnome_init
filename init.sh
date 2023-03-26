@@ -14,10 +14,9 @@ sh ./bluetooth.sh
 sh ./blacklist.sh
 
 # cmd
-#  cmd-base
+#  base
 install base-devel bat fd exa neovim  paru asp
-# EDITOR="nvim"
-cp_conf_home ".config/environment.d/cmd.conf"
+cp_conf_home ".config/environment.d/cmd.conf" # EDITOR="nvim"
 sh ./initool.sh build
 sh ./zsh.sh
 #  net
@@ -29,10 +28,10 @@ sh ./openvpn.sh
 sh ./swap.sh
 
 # gui
-#  xorg-base
+#  xorg
 install xclip
 sh ./wayland.sh
-#  gui-base
+#  base
 sh ./gnome.sh
 sh ./theme.sh
 sh ./fcitx5.sh
@@ -42,20 +41,23 @@ sh ./vscode.sh
 sh ./recorder.sh
 sh ./notify.sh
 sh ./cron.sh
-#  gui-normal
+#  normal
 sh ./qq.sh
 sh ./wechat.sh
-sh ./wps.sh
+sh ./desktop_file.sh # 需要制定
+#  office
 sh ./sunlogin.sh
-#install_ur com.qq.weixin.work.deepin-x11
+sh ./wps.sh
 install_ur wemeet-bin
+#install_ur com.qq.weixin.work.deepin-x11
+#  developer-java
 install intellij-idea-community-edition jdk8-openjdk 
 sh ./datagrip.sh
-sh ./desktop_file.sh
-
-sh ./font.sh
 
 # runtime
-sh ./docker.sh
 install_ur appimagelauncher
+sh ./docker.sh
 sh ./qemu.sh
+
+# font
+sh ./font.sh
