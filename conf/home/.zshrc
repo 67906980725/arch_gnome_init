@@ -174,3 +174,6 @@ alias v="nvim";
 #   cdls
 # }
 # alias z="zls";
+
+
+echo "Tomorrow is always fresh, with no mistakes in it yet."

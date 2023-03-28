@@ -15,6 +15,7 @@ xdg-open https://greasyfork.org/en/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%
 
 # plugin
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/tampermonkey
+xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/mailvelope
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/octotree
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/%E8%85%BE%E8%AE%AF%E7%BF%BB%E8%AF%91/
 xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/immersive-translate

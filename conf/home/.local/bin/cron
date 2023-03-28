@@ -2,20 +2,26 @@
 
 # 供 ~/.config/autostart 下 desktop 文件调用实现用户级自启服务
 
-sunset_sunrise()
-{
-    $HOME/.local/bin/sunset_sunrise
-}
+normal_time=10
+cd $HOME/.local/bin/crons
 
-cron() {
-    sunset_sunrise
-    
-    [ $1 ] && sleep $1
-    let i=10
-    while true; do
-        [ $((i % 300)) -eq 0 ] && sunset_sunrise # 每300秒
-        sleep 10; let i+=10
+
+taks()
+{
+    for f in $(ls)
+    do
+        sh $f $1
     done
 }
 
-cron 5 &
+cron() {
+    sleep $1
+    let cnt=$normal_time
+    while true; do
+        taks $cnt
+        sleep $normal_time; let cnt+=$normal_time
+    done
+}
+
+taks
+cron $normal_time &

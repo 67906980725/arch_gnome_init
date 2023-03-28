@@ -9,8 +9,6 @@ sudo docker run -d \
     --name aria2-pro \
     --net=host \
     -u root \
-    -e PUID=0 \
-    -e PGID=0 \
     --restart unless-stopped \
     --log-opt max-size=1m \
     -e UMASK_SET=022 \
@@ -20,8 +18,8 @@ sudo docker run -d \
     -e LISTEN_PORT=6888 \
     -p 6888:6888 \
     -p 6888:6888/udp \
-    -v $HOME/.config/aria2_pro:/config \
-    -v $HOME/downloads:/downloads \
+    -v /root/.config/aria2_pro:/config \
+    -v /root/Downloads:/downloads \
     --privileged=true \
     p3terx/aria2-pro
 
@@ -46,3 +44,4 @@ sudo docker run -d \
 #     p3terx/aria2-pro:202108221156
 
 cp_conf_home ".local/share/applications/aria_ng.desktop"
+cp_conf_home ".local/bin/move_root_downloads"
