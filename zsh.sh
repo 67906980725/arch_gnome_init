@@ -25,3 +25,5 @@ chsh -s "$(which zsh)"
 cp_conf_home ".local/bin/now"
 cp_conf_home ".local/bin/k"
 cp_conf_home ".local/bin/len"
+
+cp_conf_home ".local/bin/down_github_file"

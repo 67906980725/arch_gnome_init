@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# 使用代理下载github文件  down_github_file <url> [use_proxy_url_num:-0] 
+# 使用代理下载github文件, 常用于 paru 从 aur 安装软件下载 github 资源失败时
+# down_github_file <url> [use_proxy_url_num:-0] 
 
 cd $HOME/Downloads
 
@@ -9,7 +10,7 @@ proxys=("https://gh.flyinbug.top/gh" \
     "https://proxy.methanol.top")
 
 url="$1"
-use_num=$2;[ ! $use_num ] && use_num=0
+use_num=$2; [ ! $use_num ] && use_num=0
 proxy_url="${proxys[$use_num]}"
 proxyed_url="$proxy_url/$url"
 
