@@ -16,7 +16,8 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kgx # é»˜è
 # plugin
 install chrome-gnome-shell gnome-shell-extension-appindicator  gnome-shell-extension-net-speed
 install_ur gnome-shell-extension-clipboard-indicator
-xdg-open https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
+#firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
+install_ur firefox-extension-gnome-shell-integration 
 xdg-open https://extensions.gnome.org/extension/5237/rounded-window-corners/
 xdg-open https://extensions.gnome.org/extension/1514/rounded-corners/
 # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
