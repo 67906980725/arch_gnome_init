@@ -20,6 +20,7 @@ cp_conf_home ".config/environment.d/cmd.conf" # EDITOR="nvim"
 sh ./initool.sh build
 sh ./zsh.sh
 #  net
+cp_conf_root "/etc/hosts"
 sh ./ssh.sh
 sh ./openvpn.sh
 
