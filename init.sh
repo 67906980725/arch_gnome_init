@@ -23,6 +23,7 @@ sh ./initool.sh build
 sh ./zsh.sh
 #  net
 cp_conf_root "/etc/hosts"
+sh ./vnstat.sh
 sh ./ssh.sh
 sh ./openvpn.sh
 

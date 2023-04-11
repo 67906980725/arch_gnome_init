@@ -26,3 +26,6 @@ cd arch_gnome_init
 cd $HOME/.local/project/i/sys/arch_gnome_init
 sh ./after_reboot.sh
 ```
+
+*arch装软件后如果有奇怪的问题可以更新一下然后重启再看
+*arch正常更新后如果有奇怪的问题多半重启一下就可以

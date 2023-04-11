@@ -22,6 +22,9 @@ sudo docker run -d \
     -v /root/Downloads:/downloads \
     --privileged=true \
     p3terx/aria2-pro
+# 如果有关机慢的问题可能是docker运行的aria2影响的, 停过一次实例后就好了
+# docker ps | grep aria2 | awk '{print $1}'| xargs docker stop
+# docker ps -a | grep aria2 | awk '{print $1}'| xargs docker start
 
 # 以前能用现在不能用了
 # docker run -d \
