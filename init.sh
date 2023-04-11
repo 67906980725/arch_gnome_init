@@ -49,6 +49,7 @@ sh ./cron.sh
 sh ./qq.sh
 sh ./wechat.sh
 sh ./desktop_file.sh # 需要制定
+sh ./clash-verge.sh
 #  office
 sh ./sunlogin.sh
 sh ./wps.sh
@@ -59,7 +60,7 @@ install intellij-idea-community-edition jdk8-openjdk
 sh ./datagrip.sh
 
 # runtime
-install_ur appimagelauncher
+# install_ur appimagelauncher
 sh ./docker.sh
 sh ./qemu.sh
 
