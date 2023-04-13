@@ -18,4 +18,11 @@ cp -frp ./conf/home/.local/share/fcitx5/themes $HOME/.local/share/fcitx5/
 # export XIM="fcitx"
 # export XIM_PROGRAM="fcitx"
 # export GLFW_IM_MODULE="ibus"
-cp_conf_home ".config/environment.d/i18n.conf"
+cp_conf_home ".config/environment.d/ime.conf"
+
+cp_conf_root "/etc/locale.gen"
+sudo locale-gen
+
+# localectl set-locale LANG=zh_CN.UTF-8
+cp_conf_home ".config/locale.conf"
+
