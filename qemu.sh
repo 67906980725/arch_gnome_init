@@ -8,6 +8,9 @@ sudo sudo systemctl enable libvirtd --now
 
 # 打开virt-manager, 新建连接, Hypervisor 选 QEMU-KVM,(不能是user-session那个, 还不支持virtiofs)
 
+# 网络 
+# 虚拟机硬件信息里add harware - network - *****NAT   (下次启动报错network 'default' not active 删掉重加一个)
+
 # 共享文件夹和剪切板
 # 虚拟机硬件信息(感叹号图标) memory 里勾上 enable shared memory, 
 # 点击下方 add hardware - filesystem - driver:virtiofs, source path:主机上要共享的文件夹, target path:windows下就是磁盘名
