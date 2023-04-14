@@ -60,9 +60,11 @@ install intellij-idea-community-edition jdk8-openjdk
 sh ./datagrip.sh
 
 # runtime
-# install_ur appimagelauncher
+#install_ur appimagelauncher
 sh ./docker.sh
 sh ./qemu.sh
+#  game
+sh ./yuzu.sh
 
 # font
 sh ./font.sh
