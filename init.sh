@@ -45,6 +45,7 @@ sh ./vscode.sh
 sh ./recorder.sh
 sh ./notify.sh
 sh ./cron.sh
+install ntfs-3g
 #  normal
 sh ./qq.sh
 sh ./wechat.sh
