@@ -8,8 +8,13 @@ source ./cp_conf.sh
 # 如果是用archinstall安装的系统应该提前选好Optional repositories: ['multilib']
 # 如果没有提前选择也不要紧，前边的mirror脚本覆盖的/etc/pacman.conf里也是开启了的
 install base-devel
-install_ur deepin-wine-wechat
 
+cp_conf_home ".cache/winetricks/msls31"
+install wine-for-wechat wine-wechat-setup lib32-v4l-utils
+
+
+# bak
+#install_ur deepin-wine-wechat
 # 提示从git下载文件失败不要怕， 找个github文件加速站
 # 如： https://tool.mintimate.cn/gh/
 # 手动下载放进~/.cache/paru/clone/deepin-wine-wechat/
@@ -18,8 +23,8 @@ install_ur deepin-wine-wechat
 # 如果加速站也提示没文件就是文件url错了， 到github
 # https://github.com/vufa/deepin-wine-wechat-arch
 # 找正确文件url下载
-
-/opt/apps/com.qq.weixin.deepin/files/run.sh winecfg
-
+#/opt/apps/com.qq.weixin.deepin/files/run.sh winecfg
 # 快捷打开winecfg或其他fix功能
-cp_conf_home ".local/bin/rewechat"
+#cp_conf_home ".local/bin/rewechat"
+
+
