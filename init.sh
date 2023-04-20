@@ -46,6 +46,7 @@ sh ./recorder.sh
 sh ./notify.sh
 sh ./cron.sh
 install ntfs-3g
+install dmidecode
 #  normal
 sh ./qq.sh
 sh ./wechat.sh
@@ -56,9 +57,11 @@ sh ./sunlogin.sh
 sh ./wps.sh
 install_ur wemeet-bin
 #install_ur com.qq.weixin.work.deepin-x11
-#  developer-java
+#  develop-java
 install intellij-idea-community-edition jdk8-openjdk 
 sh ./datagrip.sh
+#  develop-rust
+sh ./rust.sh
 
 # runtime
 #install_ur appimagelauncher
