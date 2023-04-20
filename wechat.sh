@@ -3,6 +3,11 @@
 source ./install.sh
 source ./cp_conf.sh
 
+# 中文口口或不显示问题
+# 自己找 msyhl.ttc msyhbd.ttc msyh.ttc 复制到 ~/.local/share/fonts 下
+# wine 设置中 显示-屏幕分辨率 下描述文字口口口问题
+# 自己找 simsun.ttc simsunb.ttc 复制到 ~/.local/share/fonts 下
+
 # deepin-wine-wechat依赖Multilib仓库中的一些 32 位库，
 # Archlinux 默认没有开启Multilib仓库, 
 # 如果是用archinstall安装的系统应该提前选好Optional repositories: ['multilib']
@@ -11,6 +16,7 @@ install base-devel
 
 cp_conf_home ".cache/winetricks/msls31"
 install wine-for-wechat wine-wechat-setup lib32-v4l-utils
+
 
 
 # bak
@@ -26,5 +32,3 @@ install wine-for-wechat wine-wechat-setup lib32-v4l-utils
 #/opt/apps/com.qq.weixin.deepin/files/run.sh winecfg
 # 快捷打开winecfg或其他fix功能
 #cp_conf_home ".local/bin/rewechat"
-
-
