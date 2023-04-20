@@ -11,7 +11,7 @@ safe_cp()
     from="$1"
     to="$2"
     check_parent "$to"
-    cp -f "$from" "$to"
+    cp -rf "$from" "$to"
 }
 
 cp_conf_root()
