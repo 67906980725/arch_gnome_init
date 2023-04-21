@@ -176,4 +176,4 @@ alias v="nvim";
 # alias z="zls";
 
 
-echo "Tomorrow is always fresh, with no mistakes in it yet."
+vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d'
