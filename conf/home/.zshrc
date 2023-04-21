@@ -176,4 +176,6 @@ alias v="nvim";
 # alias z="zls";
 
 
-vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d'
+cd $PWD
+_LIU_LIANG=$(vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d' | awk -F "|" '{print $3}' | tr "\n" ' ')
+echo "昨日 / 今日: $_LIU_LIANG"
