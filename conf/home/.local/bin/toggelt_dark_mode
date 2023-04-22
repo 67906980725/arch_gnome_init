@@ -79,10 +79,13 @@ fcitx5_light()
 }
 restarts()
 {
-    notify-send "即将重启: QQ"
-    sleep 10
-    $HOME/.local/bin/k qq
-    gtk-launch qq
+    qq_cnt=$(ps -ef | grep linuxqq | wc -l)
+    if [ $qq_cnt -gt 1 ]; then
+        notify-send "即将重启: QQ"
+        sleep 10
+        $HOME/.local/bin/k qq
+        gtk-launch qq
+    fi
 }
 
 
