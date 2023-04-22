@@ -16,6 +16,7 @@ install base-devel
 
 cp_conf_home ".cache/winetricks/msls31"
 install wine-for-wechat wine-wechat-setup lib32-v4l-utils
+# install lib32-nvidia-utils
 
 
 
