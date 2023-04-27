@@ -10,6 +10,7 @@ install firefox firefox-extension-mailvelope
 
 # tampermonkey
 firefox https://greasyfork.org/zh-CN/scripts/445274-searchjumper
+firefox https://greasyfork.org/zh-CN/scripts/440871-%E9%AA%9A%E6%89%B0%E6%8B%A6%E6%88%AA
 firefox https://greasyfork.org/zh-CN/scripts/28497-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4-%E6%94%B9
 firefox https://greasyfork.org/zh-CN/scripts/405130-%E6%96%87%E6%9C%AC%E9%80%89%E4%B8%AD%E5%A4%8D%E5%88%B6
 firefox https://greasyfork.org/zh-CN/scripts/439557-%E6%96%87%E6%9C%AC%E9%80%89%E4%B8%AD%E5%A4%8D%E5%88%B6-%E9%80%9A%E7%94%A8
