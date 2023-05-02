@@ -1,50 +1,25 @@
 #!/usr/bin/env bash
 
 # 鉴于docker新装后重启才可用， 最好重启后再执行
+# xdg-open https://p3terx.com/archives/docker-aria2-pro.html
 
 source ./cp_conf.sh
 
 # 密码123456, 或自己改
-sudo docker run -d \
+docker run -d \
     --name aria2-pro \
-    --net=host \
-    -u root \
     --restart unless-stopped \
     --log-opt max-size=1m \
-    -e UMASK_SET=022 \
+    --network host \
+    -e PUID=$UID \
+    -e PGID=966 \ # docker group id or wheel group id
     -e RPC_SECRET=123456 \
     -e RPC_PORT=6800 \
-    -p 6800:6800 \
     -e LISTEN_PORT=6888 \
-    -p 6888:6888 \
-    -p 6888:6888/udp \
-    -v /root/.config/aria2_pro:/config \
-    -v /root/Downloads:/downloads \
-    --privileged=true \
+    -e UMASK_SET=000 \
+    -v $HOME/.config/aria2-config:/config \
+    -v $HOME/Downloads/aria2-downloads:/downloads \
     p3terx/aria2-pro
-# 如果有关机慢的问题可能是docker运行的aria2影响的, 停过一次实例后就好了
-# docker ps | grep aria2 | awk '{print $1}'| xargs docker stop
-# docker ps -a | grep aria2 | awk '{print $1}'| xargs docker start
-
-# 以前能用现在不能用了
-# docker run -d \
-#     --name aria2-pro \
-#     --net=host \
-#     -u $UID:$GID \
-#     -e PUID=$UID \
-#     -e PGID=$GID \
-#     --restart unless-stopped \
-#     --log-opt max-size=1m \
-#     -e UMASK_SET=022 \
-#     -e RPC_SECRET=123456 \
-#     -e RPC_PORT=6800 \
-#     -p 6800:6800 \
-#     -e LISTEN_PORT=6888 \
-#     -p 6888:6888 \
-#     -p 6888:6888/udp \
-#     -v $HOME/.config/aria2_pro:/config \
-#     -v $HOME/downloads:/downloads \
-#     p3terx/aria2-pro:202108221156
 
 cp_conf_home ".local/share/applications/aria_ng.desktop"
 cp_conf_home ".local/bin/move_root_downloads"
