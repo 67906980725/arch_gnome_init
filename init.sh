@@ -50,6 +50,7 @@ install dmidecode
 #  normal
 sh ./qq.sh
 sh ./wechat.sh
+sh ./aliyunpan.sh
 sh ./desktop_file.sh # 需要制定
 sh ./clash-verge.sh
 #  office
@@ -60,6 +61,7 @@ install_ur wemeet-bin
 #  develop-java
 install intellij-idea-community-edition jdk8-openjdk 
 sh ./datagrip.sh
+sh ./navicat.sh
 #  develop-rust
 sh ./rust.sh
 
