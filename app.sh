@@ -31,7 +31,7 @@ desk()
 Encoding=UTF-8
 Type=Application
 Terminal=false
-Icon=\"$3\"
+Icon=$3
 Exec=sh -c \"${r_path} $4\"
 Name=$2
 Name[zh_CN]=$2
