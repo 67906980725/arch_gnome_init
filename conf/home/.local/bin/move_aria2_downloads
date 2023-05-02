@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo chown $USER $HOME/Downloads/aria2-downloads/*
+ls $HOME/Downloads/aria2-downloads | xargs -I{} sudo mv "$HOME/Downloads/aria2-downloads/{}" $HOME/Downloads/

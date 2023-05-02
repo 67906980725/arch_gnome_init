@@ -11,15 +11,15 @@ docker run -d \
     --restart unless-stopped \
     --log-opt max-size=1m \
     --network host \
-    -e PUID=$UID \
-    -e PGID=966 \ # docker group id or wheel group id
+    -e PUID=0 \
+    -e PGID=0 \
     -e RPC_SECRET=123456 \
     -e RPC_PORT=6800 \
     -e LISTEN_PORT=6888 \
-    -e UMASK_SET=000 \
     -v $HOME/.config/aria2-config:/config \
     -v $HOME/Downloads/aria2-downloads:/downloads \
     p3terx/aria2-pro
 
 cp_conf_home ".local/share/applications/aria_ng.desktop"
-cp_conf_home ".local/bin/move_root_downloads"
+cp_conf_home ".local/bin/move_aria2_downloads"
+ln -s $HOME/.local/bin/move_aria2_downloads $HOME/Downloads/
