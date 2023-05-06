@@ -186,7 +186,7 @@ unalias_git() {
 	aliased_git=0
 }
 hook_chpwd() {
-	if [ $aliased_git -eq 0 ] && git status >/dev/null 2>&1 ; then
+	if [ $aliased_git -eq 0 ] && git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
 		alias_git
 	elif [ $aliased_git -eq 1 ]; then
 		unalias_git
