@@ -175,6 +175,26 @@ alias v="nvim";
 # }
 # alias z="zls";
 
+# hooks
+aliased_git=0
+alias_git() {
+	alias gs="git status"
+	aliased_git=1
+}
+unalias_git() {
+	unalias gs
+	aliased_git=0
+}
+hook_chpwd() {
+	if [ $aliased_git -eq 0 ] && git status >/dev/null 2>&1 ; then
+		alias_git
+	elif [ $aliased_git -eq 1 ]; then
+		unalias_git
+	fi
+}
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd() { hook_chpwd }
+
 
 cd $PWD
 _LIU_LIANG=$(vnstat -d 2 | grep -v estimated | grep -v day | grep -v daily | grep -v + | sed '/^$/d' | awk -F "|" '{print $3}' | tr "\n" ' ')
