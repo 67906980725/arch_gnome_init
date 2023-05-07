@@ -47,17 +47,17 @@ theme() {
 
 
 touchpad() {
-    gsettings set org.gnome.desktop.peripherals.touchpad speed "0.66972477064220182"
-    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    gsettings set org.gnome.desktop.peripherals.touchpad speed "0.66972477064220182" # 速度
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true # 轻触以点击
 }
 
 
 eye() {
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20.0
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true # 开启护
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3500 # 色温
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false # 关闭定时开关
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20.0 # 永不关闭
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 20.0
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3500
 }
 
 
