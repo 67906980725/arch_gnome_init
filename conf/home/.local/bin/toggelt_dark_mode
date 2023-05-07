@@ -9,8 +9,8 @@ gnome_shell_light_name="Orchis-Light-Compact"
 gtk2_dark_name="Adwaita-dark"
 gtk2_light_name="Adwaita"
 
-code_dark_name="Default\ Dark+"
-code_light_name="Default\ Light+"
+code_dark_name="Default\ Dark\ Modern"
+code_light_name="Default\ Light\ Modern" # 默认主题时可能 json 文件中不存在主题色属性, 需要先在 vscode 中手动修改为白色主题. todo 用 jq 修改
 fcitx5_dark_name="Alpha-black-2.0"
 fcitx5_light_name="珍珠白"
 
