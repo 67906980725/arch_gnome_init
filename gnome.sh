@@ -5,22 +5,19 @@ source ./cp_conf.sh
 source ./default_path.sh
 
 
-# nemo
 nemo() {
     install nemo nemo-fileroller nemo-preview nemo-seahorse
-    # install_ur nemo-compare
+    #install_ur nemo-compare
     xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search # 默认管理器
-    gsettings set org.nemo.desktop show-desktop-icons true # 显示desktop文件图标
+    gsettings set org.nemo.desktop show-desktop-icons true # 显示 desktop 文件图标
     gsettings set org.cinnamon.desktop.default-applications.terminal exec kgx # 默认终端
 }
 
 
-
-# plugin
 plugin() {
     install chrome-gnome-shell gnome-shell-extension-appindicator  gnome-shell-extension-net-speed
     install_ur gnome-shell-extension-clipboard-indicator
-    #firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
+    # firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
     install_ur firefox-extension-gnome-shell-integration 
     xdg-open https://extensions.gnome.org/extension/5237/rounded-window-corners/
     xdg-open https://extensions.gnome.org/extension/1514/rounded-corners/
@@ -34,14 +31,13 @@ plugin() {
 }
 
 
-# theme
 theme() {
     install vimix-cursors tela-circle-icon-theme-git gnome-themes-extra
     gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle' # icon
     gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors' # cursor
-    #gsettings set org.gnome.desktop.interface cursor-size 24 # cursor size
+    gsettings set org.gnome.desktop.interface cursor-size 32 # cursor size
     cp_conf_home ".local/bin/toggelt_dark_mode" # change dark mode cmd eg: toggelt_dark_mode light / toggelt_dark_mode dark
-    install_ur orchis-theme # 选不带git的, 默认github拉不动, 需要手动执行后去加速站下包
+    install_ur orchis-theme # 选不带 git 的, 默认 github 拉不动, 需要手动执行后去加速站下包
     #gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
     #  qt
     install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
@@ -50,16 +46,12 @@ theme() {
 }
 
 
-
-# 触摸板 速度与轻触以点击
 touchpad() {
     gsettings set org.gnome.desktop.peripherals.touchpad speed "0.66972477064220182"
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 }
 
 
-
-# 护眼
 eye() {
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
@@ -69,9 +61,7 @@ eye() {
 }
 
 
-
 keybind() {
-    # 快捷键
     # alt+tab 切换窗口
     gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
     # 窗口/应用切换不跨工作区
@@ -121,7 +111,6 @@ keybind() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Ctrl><Alt><Shift>m"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "$BIN_PATH/microphone_mute"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "microphon mute toggelt"
-
     # ctrl+alt+shift+0 增大音量
     cp_conf_home ".local/bin/volume_change"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Ctrl><Alt><Shift>0"
@@ -131,8 +120,7 @@ keybind() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding "<Ctrl><Alt><Shift>9"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command "$BIN_PATH/volume_change substract"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name "volume substract"
-
-    # light/night toggelt
+    # dark/light toggelt
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ binding "<Ctrl><Alt><Shift>d"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ command "$BIN_PATH/toggelt_dark_mode"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ name "toggelt dark mode"
