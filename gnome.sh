@@ -4,40 +4,37 @@ source ./install.sh
 source ./cp_conf.sh
 source ./default_path.sh
 
-
 nemo() {
     install nemo nemo-fileroller nemo-preview nemo-seahorse
     #install_ur nemo-compare
     xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search # 默认管理器
-    gsettings set org.nemo.desktop show-desktop-icons true # 显示 desktop 文件图标
-    gsettings set org.cinnamon.desktop.default-applications.terminal exec kgx # 默认终端
+    gsettings set org.nemo.desktop show-desktop-icons true                         # 显示 desktop 文件图标
+    gsettings set org.cinnamon.desktop.default-applications.terminal exec kgx      # 默认终端
 }
 
-
 plugin() {
-    install chrome-gnome-shell gnome-shell-extension-appindicator  gnome-shell-extension-net-speed
+    install chrome-gnome-shell gnome-shell-extension-appindicator gnome-shell-extension-net-speed
     install_ur gnome-shell-extension-clipboard-indicator
     # firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
-    install_ur firefox-extension-gnome-shell-integration 
+    install_ur firefox-extension-gnome-shell-integration
     xdg-open https://extensions.gnome.org/extension/5237/rounded-window-corners/
     xdg-open https://extensions.gnome.org/extension/1514/rounded-corners/
     # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
     # xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
     # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
-    gnome-extensions enable $(gnome-extensions list | grep -m 1 user-theme)
-    gnome-extensions enable $(gnome-extensions list | grep -m 1 appindicatorsupport)
-    gnome-extensions enable $(gnome-extensions list | grep -m 1 clipboard)
-    gnome-extensions enable $(gnome-extensions list | grep -m 1 netspeed)
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 user-theme)"
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 appindicatorsupport)"
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 clipboard)"
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 netspeed)"
 }
-
 
 theme() {
     install vimix-cursors tela-circle-icon-theme-git gnome-themes-extra
-    gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle' # icon
+    gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'     # icon
     gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors' # cursor
-    gsettings set org.gnome.desktop.interface cursor-size 32 # cursor size
-    cp_conf_home ".local/bin/toggelt_dark_mode" # change dark mode cmd eg: toggelt_dark_mode light / toggelt_dark_mode dark
-    install_ur orchis-theme # 选不带 git 的, 默认 github 拉不动, 需要手动执行后去加速站下包
+    gsettings set org.gnome.desktop.interface cursor-size 32               # cursor size
+    cp_conf_home ".local/bin/toggelt_dark_mode"                            # change dark mode cmd eg: toggelt_dark_mode light / toggelt_dark_mode dark
+    install_ur orchis-theme                                                # 选不带 git 的, 默认 github 拉不动, 需要手动执行后去加速站下包
     #gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
     #  qt
     install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
@@ -45,30 +42,27 @@ theme() {
     cp_conf_home ".config/environment.d/gnome.conf"
 }
 
-
 touchpad() {
     gsettings set org.gnome.desktop.peripherals.touchpad speed "0.66972477064220182" # 速度
-    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true # 轻触以点击
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true           # 轻触以点击
 }
-
 
 eye() {
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true # 开启护
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3500 # 色温
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true             # 开启护
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3500         # 色温
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false # 关闭定时开关
-    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20.0 # 永不关闭
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20.0       # 永不关闭
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 20.0
 }
-
 
 keybind() {
     # alt+tab 切换窗口
     gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-    # 窗口/应用切换不跨工作区
+    # 窗口/应用切换不跨工作区  (win+滚轮可以切换工作区)
     gsettings set org.gnome.shell.app-switcher current-workspace-only true
     #  快捷键注册表
     gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
-    "[ \
+        "[ \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', \
@@ -131,7 +125,6 @@ keybind() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom100/ name "monitor"
 }
 
-
 all() {
     nemo
     plugin
@@ -141,13 +134,12 @@ all() {
     keybind
 }
 
-
 case $1 in
-    nemo) nemo ;;
-    plugin) plugin ;;
-    theme) theme ;;
-    touchpad) touchpad ;;
-    eye) eye ;;
-    keybind) keybind ;;
-    *) all ;;
+nemo) nemo ;;
+plugin) plugin ;;
+theme) theme ;;
+touchpad) touchpad ;;
+eye) eye ;;
+keybind) keybind ;;
+*) all ;;
 esac
