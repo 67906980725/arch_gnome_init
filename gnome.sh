@@ -79,6 +79,7 @@ keybind() {
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/' \
+    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/' \
     ]"
     # win+c 计算器
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>c"
@@ -120,10 +121,14 @@ keybind() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding "<Ctrl><Alt><Shift>9"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command "$BIN_PATH/volume_change substract"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name "volume substract"
-    # dark/light toggelt
+    # ctrl+alt+shift+d dark/light toggelt
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ binding "<Ctrl><Alt><Shift>d"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ command "$BIN_PATH/toggelt_dark_mode"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/ name "toggelt dark mode"
+    # ctrl+shift+esc monitor
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/ binding "<Ctrl><Shift>Escape"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/ command "gnome-system-monitor"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/ name "monitor"
 }
 
 
