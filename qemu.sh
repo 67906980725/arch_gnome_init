@@ -3,7 +3,7 @@
 source ./install.sh
 
 # qemu
-install qemu-desktop virt-manager ebtables dnsmasq
+install qemu-desktop qemu-user-static virt-manager ebtables dnsmasq samba
 sudo sudo systemctl enable libvirtd --now
 
 # 打开virt-manager, 新建连接, Hypervisor 选 QEMU-KVM,(不能是user-session那个, 还不支持virtiofs)

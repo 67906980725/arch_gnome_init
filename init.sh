@@ -17,7 +17,7 @@ sh ./blacklist.sh
 
 # cmd
 #  base
-install base-devel bat fd exa neovim  paru asp
+install base-devel bat fd exa neovim python-pynvim paru asp
 cp_conf_home ".config/environment.d/cmd.conf" # EDITOR="nvim"
 sh ./initool.sh build
 sh ./zsh.sh
