@@ -206,10 +206,10 @@ alias_git() {
 unalias_git() {
 	unalias clone
 	unalias checkout
-	unalias add
 	unalias status
 	unalias pull
 	unalias diff
+	unalias add
 	unalias commit
 	unalias push
 	unalias merge
@@ -218,10 +218,10 @@ unalias_git() {
 
 	unalias ce
 	unalias ct
-	unalias a
 	unalias s
 	unalias p
 	unalias d
+	unalias a
 	unalias c
 	unalias ph
 	unalias m
