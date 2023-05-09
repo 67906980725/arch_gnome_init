@@ -178,11 +178,55 @@ alias v="nvim";
 # hooks
 aliased_git=0
 alias_git() {
-	alias gs="git status"
+	alias clone="git clone"
+	alias checkout="git checkout"
+	alias status="git status"
+	alias pull="git pull"
+	alias diff="git diff"
+	alias add="git add"
+	alias commit="git commit"
+	alias push="git push"
+	alias merge="git merge"
+	alias rebase="git rebase"
+	alias stash="git stash"
+
+	alias ce="git clone"
+	alias ct="git checkout"
+	alias s="git status"
+	alias p="git pull"
+	alias d="git diff"
+	alias a="git add"
+	alias c="git commit"
+	alias ph="git push"
+	alias m="git merge"
+	alias sh="git stash"
+
 	aliased_git=1
 }
 unalias_git() {
-	unalias gs
+	unalias clone
+	unalias checkout
+	unalias add
+	unalias status
+	unalias pull
+	unalias diff
+	unalias commit
+	unalias push
+	unalias merge
+	unalias rebase
+	unalias stash
+
+	unalias ce
+	unalias ct
+	unalias a
+	unalias s
+	unalias p
+	unalias d
+	unalias c
+	unalias ph
+	unalias m
+	unalias sh
+
 	aliased_git=0
 }
 hook_chpwd() {
