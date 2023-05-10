@@ -159,7 +159,7 @@ alias bbbbbbb="cd ../../../../../../../";
 alias bbbbbbbb="cd ../../../../../../../../";
 alias bbbbbbbbb="cd ../../../../../../../../../";
 alias bbbbbbbbbb="cd ../../../../../../../../../../";
-alias cat="bat --color always --plain";
+#alias cat="bat --color always --plain"; # gnome 终端白色背景时看不到字
 alias grep="grep --color=auto";
 alias v="nvim";
 

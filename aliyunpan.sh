@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source ./default_path.sh
+source ./cp_conf.sh
 
 # xdg-open https://github.com/odomu/aliyunpan/releases
 
@@ -17,4 +18,5 @@ fi
 
 mv -f $dfile $bin_file
 
-sh ./app.sh desk "$bin_file" aliyunpan
+cp_conf_home ".local/share/icons/other/aliyunpan.png"
+sh ./app.sh desk "$bin_file" aliyunpan "$HOME/.local/share/icons/other/aliyunpan.png"
