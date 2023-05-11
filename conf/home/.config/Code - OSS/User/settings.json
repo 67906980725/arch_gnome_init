@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Light Modern",
     "terminal.external.linuxExec": "kgx",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.fontFamily": "'JetbrainsMono Nerd Font', 'monospace', monospace",
