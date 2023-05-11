@@ -19,7 +19,6 @@ sh ./blacklist.sh
 #  base
 install base-devel bat fd exa neovim python-pynvim paru asp
 cp_conf_home ".config/environment.d/cmd.conf" # EDITOR="nvim"
-sh ./initool.sh build
 sh ./zsh.sh
 #  net
 cp_conf_root "/etc/hosts"
