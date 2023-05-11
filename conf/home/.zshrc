@@ -189,6 +189,7 @@ alias_git() {
 	alias merge="git merge"
 	alias rebase="git rebase"
 	alias stash="git stash"
+	alias reset="git reset"
 
 	alias ce="git clone"
 	alias ct="git checkout"
@@ -200,6 +201,7 @@ alias_git() {
 	alias ph="git push"
 	alias m="git merge"
 	alias sh="git stash"
+	alias r="git r"
 
 	aliased_git=1
 }
@@ -215,6 +217,7 @@ unalias_git() {
 	unalias merge
 	unalias rebase
 	unalias stash
+	unalias reset
 
 	unalias ce
 	unalias ct
@@ -226,6 +229,7 @@ unalias_git() {
 	unalias ph
 	unalias m
 	unalias sh
+	unalias r
 
 	aliased_git=0
 }
