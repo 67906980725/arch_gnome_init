@@ -57,7 +57,7 @@ eye() {
 
 keybind() {
     # alt+tab 切换窗口
-    gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>Tab"]'
     # 窗口/应用切换不跨工作区  (win+滚轮可以切换工作区)
     gsettings set org.gnome.shell.app-switcher current-workspace-only true
     #  快捷键注册表
