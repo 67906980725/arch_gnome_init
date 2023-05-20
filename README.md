@@ -14,7 +14,7 @@ ssh-add ~/.ssh/id_rsa
 
 mkdir -p $HOME/.local/project/i/sys
 cd $HOME/.local/project/i/sys
-git@gitee.com:g8307640632/arch_gnome_init.git
+git clone git@gitee.com:g8307640632/arch_gnome_init.git
 
 cd arch_gnome_init
 ./init.sh

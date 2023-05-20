@@ -3,7 +3,7 @@
 source ./install.sh
 source ./cp_conf.sh
 
-install zsh oh-my-zsh-git fzf
+install exa zsh oh-my-zsh-git fzf
 
 # install zsh-completions zsh-autosuggestions zsh-syntax-highlighting zsh-lovers zsh-theme-powerlevel10k # todo 不会用
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -15,10 +15,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sudo cp -frp $HOME/.oh-my-zsh/custom/plugins/* /usr/share/oh-my-zsh/custom/plugins/
 sudo cp -frp $HOME/.oh-my-zsh/custom/themes/* /usr/share/oh-my-zsh/custom/themes/
 
+cp_conf_root "/etc/shells"
 # cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
 cp_conf_home ".zshrc" # 环境变量需要制定
 cp_conf_home ".p10k.zsh"
-
 chsh -s "$(which zsh)"
 
 # 一些常用命令封装
