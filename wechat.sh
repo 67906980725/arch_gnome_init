@@ -18,6 +18,8 @@ cp_conf_home ".cache/winetricks/msls31"
 install wine-for-wechat wine-mono wine-gecko wine-wechat-setup lib32-v4l-utils
 # install lib32-nvidia-utils
 
+## could not open working directory clean up... starting in the Windows directory 时: rm $HOME/.local/lib/wine-wechat/default/drive_c/WeChatSetup.exe
+
 
 
 # bak
