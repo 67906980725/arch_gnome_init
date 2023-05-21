@@ -6,6 +6,7 @@ source ./default_path.sh
 
 gnome() {
     install gnome gnome-extra gdm
+    sudo systemctl disable lightdm
     sudo systemctl enable --now gdm
 }
 
