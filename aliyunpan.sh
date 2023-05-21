@@ -5,10 +5,11 @@ source ./cp_conf.sh
 
 # xdg-open https://github.com/odomu/aliyunpan/releases
 
-ver="3.10.25"
-file_name="alixby-$ver-x86_64.AppImage"
+ver="3.10.27"
+file_name="alixby-$ver-linux-x86_64.AppImage"
 
 dfile="$DOWN_PATH/$file_name"
+mkdir -p $APP_PATH
 bin_file="$APP_PATH/$file_name"
 
 if [ ! -e "$dfile" ]; then

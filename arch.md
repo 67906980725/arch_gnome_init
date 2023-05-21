@@ -567,7 +567,7 @@ sudo systemctl enable --now runsunloginclient.service
 # virtualbox
 uname -srm # 查看内核版本
 sudo pacman -S linux-headers
-sudo pacman -S virtualbox  # 选择 1 virtualbox-host-dkms
+sudo pacman -S virtualbox-host-dkms
 sudo pacman -S  virtualbox-guest-iso
 sudo pacman -S  virtualbox-ext-oracle
 sudo modprobe vboxdrv
