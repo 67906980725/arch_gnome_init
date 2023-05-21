@@ -179,12 +179,14 @@ alias v="nvim";
 aliased_git=0
 alias_git() {
 	alias clone="git clone"
+	alias remote="git remote"
 	alias checkout="git checkout"
 	alias status="git status"
 	alias pull="git pull"
 	alias diff="git diff"
 	alias add="git add"
 	alias commit="git commit"
+	alias branch="git branch"
 	alias push="git push"
 	alias merge="git merge"
 	alias rebase="git rebase"
@@ -198,21 +200,24 @@ alias_git() {
 	alias d="git diff"
 	alias a="git add"
 	alias c="git commit"
+	alias b="git branch"
 	alias ph="git push"
 	alias m="git merge"
 	alias sh="git stash"
-	alias r="git r"
+	alias r="git reset"
 
 	aliased_git=1
 }
 unalias_git() {
 	unalias clone
+	unalias remote
 	unalias checkout
 	unalias status
 	unalias pull
 	unalias diff
 	unalias add
 	unalias commit
+	unalias branch
 	unalias push
 	unalias merge
 	unalias rebase
@@ -226,6 +231,7 @@ unalias_git() {
 	unalias d
 	unalias a
 	unalias c
+	unalias b
 	unalias ph
 	unalias m
 	unalias sh
