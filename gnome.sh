@@ -5,7 +5,12 @@ source ./cp_conf.sh
 source ./default_path.sh
 
 gnome() {
-    install gnome gnome-extra gdm
+    install gnome gdm
+    #install gnome-extra 
+    # 排除 gnome-weather gnome-maps gnome-recipes polari
+    # gnome-games libgnome-games-support
+    # gnome-2048 gnome-mahjongg gnome-chess gnome-klotski gnome-mines gnome-nibbles gnome-taquin gnome-sudoku gnome-tetravex quadrapassel lightsoff iagno gnome-robots five-or-more four-in-a-row tali
+    
     sudo systemctl disable lightdm
     sudo systemctl enable --now gdm
 }
