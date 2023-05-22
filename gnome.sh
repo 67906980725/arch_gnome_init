@@ -24,20 +24,23 @@ nemo() {
 }
 
 plugin() {
-    install chrome-gnome-shell 
-    install gnome-shell-extension-appindicator gnome-shell-extension-net-speed
-    install_ur gnome-shell-extension-clipboard-indicator
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 user-theme)"
+
+    install chrome-gnome-shell
     # firefox https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/
     install_ur firefox-extension-gnome-shell-integration
+
+    # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
+    install gnome-shell-extension-appindicator
+    gnome-extensions enable "$(gnome-extensions list | grep -m 1 appindicatorsupport)"
+
     xdg-open https://extensions.gnome.org/extension/1514/rounded-corners/
     xdg-open https://extensions.gnome.org/extension/5237/rounded-window-corners/
-    # xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
-    # xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
+
+    xdg-open https://extensions.gnome.org/extension/1085/simple-net-speed/
+    # gnome-extensions enable "$(gnome-extensions list | grep -m 1 netspeed)"
+
     # gsettings set org.gnome.shell enabled-extensions "['clipboard-indicator@tudmotu.com', 'netspeed@alynx.one', 'appindicatorsupport@rgcjonas.gmail.com']"
-    gnome-extensions enable "$(gnome-extensions list | grep -m 1 user-theme)"
-    gnome-extensions enable "$(gnome-extensions list | grep -m 1 appindicatorsupport)"
-    gnome-extensions enable "$(gnome-extensions list | grep -m 1 clipboard)"
-    gnome-extensions enable "$(gnome-extensions list | grep -m 1 netspeed)"
 }
 
 theme() {
