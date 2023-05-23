@@ -69,7 +69,7 @@ sh ./rust.sh
 # runtime
 #install_ur appimagelauncher
 sh ./docker.sh
-sh ./qemu.sh
+sh ./virtual_box.sh
 #  game
 sh ./yuzu.sh
 
