@@ -40,7 +40,6 @@ fanyi.youdao.com##.footer
 
 ! 2023-04-12 https://fanyi.youdao.com
 fanyi.youdao.com##.inner-content
-fanyi.youdao.com##.mask.pop-up-comp
 
 ! 2023-05-09 https://tieba.baidu.com
 tieba.baidu.com##.right_bright.right_section
