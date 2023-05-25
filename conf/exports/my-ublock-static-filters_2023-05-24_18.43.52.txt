@@ -44,3 +44,5 @@ fanyi.youdao.com##.inner-content
 ! 2023-05-09 https://tieba.baidu.com
 tieba.baidu.com##.right_bright.right_section
 
+! 2023-05-24 https://www.bilibili.com
+www.bilibili.com##.adblock-tips
