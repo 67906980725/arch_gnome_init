@@ -44,7 +44,7 @@ plugin() {
 }
 
 theme() {
-    install vimix-cursors tela-circle-icon-theme-git gnome-themes-extra
+    install vimix-cursors tela-circle-icon-theme-git qogir-icon-theme-git gnome-themes-extra
     gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle'     # icon
     gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-cursors' # cursor
     gsettings set org.gnome.desktop.interface cursor-size 32               # cursor size
