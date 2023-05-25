@@ -50,7 +50,7 @@ theme() {
     gsettings set org.gnome.desktop.interface cursor-size 32               # cursor size
     cp_conf_home ".local/bin/toggelt_dark_mode"                            # change dark mode cmd eg: toggelt_dark_mode light / toggelt_dark_mode dark
     install_ur orchis-theme                                                # 选不带 git 的, 默认 github 拉不动, 需要手动执行后去加速站下包
-    #gsettings set org.gnome.shell.extensions.user-theme name 'Orchis'
+    gsettings set org.gnome.shell.extensions.user-theme name 'Orchis-Light-Compact'
     #  qt
     install adwaita-qt5 adwaita-qt6 qgnomeplatform-qt5 qgnomeplatform-qt6
     #  QT_QPA_PLATFORMTHEME=qgnomeplatform
